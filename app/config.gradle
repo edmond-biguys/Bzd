@@ -1,0 +1,34 @@
+//Gradle 工程通用配置文件
+ext {
+    //isModule = true  表示每个业务Module单独打包
+    //isModule = false 表示每个业务Module以lib方式运行
+    isModule = false
+
+    //应用ID，appId
+    appId = [
+            applicationId           : "com.xmcc.bzd",        //
+            applicationIdDev        : "com.xmcc.bzddev"      //应用ID，dev版本
+    ]
+
+    //版本号，统一管理project依赖版本、sdk版本等
+    versions = [
+            versionName             : "1.0",
+
+            javaSDKVersion          : "17",
+
+            compileSDKVersion       : 33,
+            minSDKVersion           : 24,
+            targetSDKVersion        : 33,
+            buildToolsVersion       : "33.0.0",
+
+            coreKtxVersion          : "1.8.0",
+            appcompatVersion        : "1.6.1",
+    ]
+
+    //依赖库
+    dependencies = [
+            //android系统依赖
+            appcompat : "androidx.appcompat:appcompat:${versions["appcompatVersion"]}",
+            coreKtx   : "androidx.core:core-ktx:${versions["coreKtxVersion"]}",
+    ]
+}
